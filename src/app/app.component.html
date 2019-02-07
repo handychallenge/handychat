@@ -1,0 +1,14 @@
+<div class="container main-container">
+
+  <div class="col-md-12 text-right" *ngIf="chatService.user.uid">
+    <button type="button" class="btn btn-outline-danger" (click)="chatService.logout()">
+      Salir
+    </button>
+  </div>
+
+  <app-login *ngIf="!chatService.user.uid"></app-login>
+
+  <div class="chat-window" *ngIf="chatService.user.uid">
+      <app-chat></app-chat>  
+  </div>
+</div>
